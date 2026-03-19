@@ -82,19 +82,26 @@ class Requset
             if ($this->resHandler->isTenpaySign()) {
                 //当返回状态与业务结果都为0时才返回支付二维码，其它结果请查看接口文档
                 if ($this->resHandler->getParameter('status') == 0 && $this->resHandler->getParameter('result_code') == 0) {
-                    return json_encode(array(
+                    return json_encode([
                         'status' => 200,
                         'code_img_url' => $this->resHandler->getParameter('code_img_url'),
                         'code_url' => $this->resHandler->getParameter('code_url'),
                         'code_status' => $this->resHandler->getParameter('code_status'),
-                        'type' => $this->reqHandler->getParameter('service')), JSON_UNESCAPED_SLASHES);
+                        'type' => $this->reqHandler->getParameter('service')
+                    ], JSON_UNESCAPED_SLASHES+JSON_UNESCAPED_UNICODE);
                 } else {
-                    return json_encode(array('status' => 500, 'msg' => 'Error Code:' . $this->resHandler->getParameter('err_code') . ' Error Message:' . $this->resHandler->getParameter('err_msg')));
+                    return json_encode([
+                        'status' => 500, 'msg' => 'Error Code:' . $this->resHandler->getParameter('err_code') . ' Error Message:' . $this->resHandler->getParameter('err_msg')
+                    ],JSON_UNESCAPED_SLASHES+JSON_UNESCAPED_UNICODE);
                 }
             }
-            return json_encode(array('status' => 500, 'msg' => 'Error Code:' . $this->resHandler->getParameter('status') . ' Error Message:' . $this->resHandler->getParameter('message')));
+            return json_encode([
+                'status' => 500, 'msg' => 'Error Code:' . $this->resHandler->getParameter('status') . ' Error Message:' . $this->resHandler->getParameter('message')
+            ],JSON_UNESCAPED_SLASHES+JSON_UNESCAPED_UNICODE);
         } else {
-            return json_encode(array('status' => 500, 'msg' => 'Response Code:' . $this->pay->getResponseCode() . ' Error Info:' . $this->pay->getErrInfo()));
+            return json_encode([
+                'status' => 500, 'msg' => 'Response Code:' . $this->pay->getResponseCode() . ' Error Info:' . $this->pay->getErrInfo()
+            ], JSON_UNESCAPED_SLASHES+JSON_UNESCAPED_UNICODE);
         }
     }
 
@@ -290,17 +297,12 @@ class Requset
      */
     public function callback($xml)
     {
-        @file_put_contents('xinye.log', $xml . PHP_EOL, FILE_APPEND);//检测是否执行callback方法，如果执行，会生成1.txt文件，且文件中的内容就是通知参数
         $this->resHandler->setContent($xml);
         //var_dump($this->resHandler->setContent($xml));
         $this->resHandler->setKey($this->config->getConfig('key'));
         if ($this->resHandler->isTenpaySign()) {
             if ($this->resHandler->getParameter('status') == 0 && $this->resHandler->getParameter('result_code') == 0) {
                 $tradeno = $this->resHandler->getParameter('out_trade_no');
-                // 此处可以在添加相关处理业务，校验通知参数中的商户订单号out_trade_no和金额total_fee是否和商户业务系统的单号和金额是否一致，一致后方可更新数据库表中的记录。
-                //更改订单状态
-                Utils::dataRecodes('接口回调收到通知参数', $this->resHandler->getAllParameters());
-                ob_clean();
                 $total_fee = $this->resHandler->getParameter('total_fee');
                 return [
                     'order_id' => $tradeno,
