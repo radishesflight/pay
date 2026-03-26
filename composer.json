@@ -6,7 +6,8 @@
         "pay"
     ],
     "require": {
-        "php": ">=7.1.0"
+        "php": ">=7.1.0",
+        "lpilp/guomi": "^2.0"
     },
     "license": "MIT",
     "authors": [
