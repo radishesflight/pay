@@ -109,4 +109,13 @@ class Cmb
         curl_close($ch);
         return json_decode($output, true);
     }
+
+    public static function verifySign(string $responseBody = '', string $cmbBodySign = '', string $cmbPublicKey = '')
+    {
+
+        $sm2 = new RtSm2('base64');
+        $sm2->verifySign($responseBody, $cmbBodySign, $cmbPublicKey);
+
+        return true;
+    }
 }

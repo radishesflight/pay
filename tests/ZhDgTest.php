@@ -55,3 +55,25 @@ $response = (new Cmb([
 print_r($response);
 exit();
 
+
+//验证签名
+$data = $requestData['body'];
+$header = $requestData['header'];
+
+file_put_contents('cmbPay.log', json_encode(["header" => $header, "body" => $data], JSON_UNESCAPED_UNICODE + JSON_UNESCAPED_SLASHES) . "\r\n", FILE_APPEND);
+$payConfig = config("zhdg");
+$sm2 = (new Cmb($payConfig))->verify_sign($data, $header["cmb-bodysign"], $payConfig["public_key"]);
+//对接文档乱全靠猜
+//        ksort($data);
+//        reset($data);
+
+$sign = $sm2->verify_sign(json_encode($data, JSON_UNESCAPED_UNICODE + JSON_UNESCAPED_SLASHES), $header["cmb-bodysign"], $payConfig["public_key"]);
+if (!$sign) {
+    file_put_contents('sign.log', json_encode(["header" => $header, "body" => $data], JSON_UNESCAPED_UNICODE + JSON_UNESCAPED_SLASHES) . "\r\n", FILE_APPEND);
+    return json([
+        "respCode" => "LX11C995",
+        "respDesc" => "签名验证失败",
+    ]);
+}
+
+
