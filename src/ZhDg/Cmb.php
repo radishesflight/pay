@@ -110,11 +110,11 @@ class Cmb
         return json_decode($output, true);
     }
 
-    public static function verifySign(string $responseBody = '', string $cmbBodySign = '', string $cmbPublicKey = '')
+    public  function verifySign( $responseBody = '',  $cmbBodySign = '',  $cmbPublicKey = '')
     {
 
         $sm2 = new RtSm2('base64');
-        $sm2->verifySign($responseBody, $cmbBodySign, $cmbPublicKey);
+        $sm2->verifySign($responseBody, $cmbBodySign, $this->payConfig['public_key']??$cmbPublicKey);
 
         return true;
     }
