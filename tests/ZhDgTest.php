@@ -43,6 +43,40 @@ $requestBodyJson = [
     ],
 ];
 
+
+
+//$requestBodyJson = [
+//    "head" => [
+//        "version" => "1.0",
+//        "datetime" => date("Y-m-d H:i:s"),
+//    ],
+//    "body" => [
+//        "orderInfoPayDto" => [
+//            "appId" => $config['appid'],
+//            "uniPltNbr" => $config['merch_id'],
+//            "uniMchNbr" => $config['merch_id'],
+//            "mchOrderNbr" =>  $mchOrderNbr,//商户订单号
+//            "mchTransNbr" => $mchOrderNbr,//商户交易流水号
+//            "orderType" => "PAY",
+//            "orderSubtype" => "DRT",
+//            "orderAmt" => $orderAmt,
+//            "orderCcyNbr" => "10",
+//            "orderPostTime" => date('YmdHis'),
+//            "urlTimeLimit" => "5", //收银单 URL 跳转支付时限 单位分钟
+//            "orderValidateTime" => "",
+//            "payerIssrId" => "",
+//            "pltRemark" => $data['orderNumber'],//平台备注
+//            "orderRemark" => $data['orderNumber'],//订单备注
+//            "frontNtfUrl" => $data['frontNtfUrl']??"",
+//            "asyncNtfUrl" => $config['notify'],
+//        ],
+//        "orderExtendPayDto" => [
+//            "transTerminalType" => $transTerminalType,
+//            "transChannelType" => $transChannelType,
+//            "transIp" => $this->getRealIp(),
+//        ],
+//    ],
+//];
 $response = (new Cmb([
     "host" => "https://api.cmbchina.com/qyyh/cbl-v2.0/order-pay",//招行地址
     "appid" => "9fb64fe9-ed22-459b-a2dc-dbd78c73cf8e",//appid
