@@ -1,6 +1,7 @@
 <?php
 
 use RadishesFlight\Pay\ZhDg\Cmb;
+use think\Request;
 
 require 'vendor/autoload.php';
 
@@ -105,5 +106,198 @@ if (!$sign) {
         "respDesc" => "签名验证失败",
     ]);
 }
+
+
+//对账单下载
+ function cmb(Request $request)
+{
+    $is_test= env('CMB.IS_TEST',false);
+    if ($is_test){
+        $config = config('zhdgCs');
+    }else{
+        $config = config('zhdg');
+    }
+    $billDate = $request->get('billDate', date('Ymd'));
+    $list = [];
+    $i = 1;
+    while (true) {
+        $pageNum = $request->get('pageNum', $i);
+        $pageSize = $request->get('pageSize', 100);
+        $requestBodyJson = [
+            "head" => [
+                "version" => "1.0",
+                "datetime" => date("Y-m-d H:i:s"),
+            ],
+            "body" => [
+                "billQryDto" => [
+                    "appId" => $config['appid'],
+                    "uniPltNbr" => $config['merch_id'],
+                    "uniMchNbr" => $config['merch_id'],
+                    "orderDate" => $billDate,//时间
+                    "pageNum" => $pageNum,//
+                    "pageSize" => $pageSize,
+                ]
+            ],
+        ];
+        $response = (new Cmb($config))->post($requestBodyJson, $config['host'] . $config['bill_info_url']);
+        if (!empty($response['body']['billQryRtnDto'])) {
+            $listOne = $response['body']['billQryRtnDto'];
+            $list = array_merge($list, $listOne);
+            $i++;
+        } else {
+            break;
+        }
+    }
+    $PHPExcel = new \PHPExcel();
+    $PHPSheet = $PHPExcel->getActiveSheet();
+    $PHPSheet->setTitle("对账单"); //给当前活动sheet设置名称
+    $PHPSheet->setCellValue("A1", "应用ID")
+        ->setCellValue("B1", "订单号")
+        ->setCellValue("C1", "订单交易序号")
+        ->setCellValue("D1", "商户订单号")
+        ->setCellValue("E1", "商户交易流水号")
+        ->setCellValue("F1", "关联交易流水号")
+        ->setCellValue("G1", "订单类型")
+        ->setCellValue("H1", "订单子类")
+        ->setCellValue("I1", "订单金额")
+        ->setCellValue("J1", "订单币种")
+        ->setCellValue("K1", "订单状态")
+        ->setCellValue("L1", "请求结果")
+        ->setCellValue("M1", "订单开始时间")
+        ->setCellValue("N1", "订单完成时间")
+        ->setCellValue("O1", "订单推送时间")
+        ->setCellValue("P1", "订单无效时间")
+        ->setCellValue("Q1", "订单无效标志")
+        ->setCellValue("R1", "错误码")
+        ->setCellValue("S1", "错误描述")
+        ->setCellValue("T1", "对账状态")
+        ->setCellValue("U1", "对账时间")
+        ->setCellValue("V1", "对账金额")
+        ->setCellValue("W1", "清算标志")
+        ->setCellValue("X1", "清算时间")
+        ->setCellValue("Y1", "清算金额")
+        ->setCellValue("Z1", "清算对账失败原因")
+        ->setCellValue("AA1", "清算模式")
+        ->setCellValue("AB1", "确认标志")
+        ->setCellValue("AC1", "确认金额")
+        ->setCellValue("AD1", "退款标志")
+        ->setCellValue("AE1", "退款金额")
+        ->setCellValue("AF1", "关联订单号")
+        ->setCellValue("AG1", "平台编号")
+        ->setCellValue("AH1", "商户编号")
+        ->setCellValue("AI1", "银联商户编号")
+        ->setCellValue("AJ1", "网联商户编号")
+        ->setCellValue("AK1", "统一平台商户编号")
+        ->setCellValue("AL1", "统一收款商户编号")
+        ->setCellValue("AM1", "商户简称")
+        ->setCellValue("AN1", "平台备注")
+        ->setCellValue("AO1", "订单备注")
+        ->setCellValue("AP1", "付款方网关机构标识")
+        ->setCellValue("AQ1", "付款方账户机构标识")
+        ->setCellValue("AR1", "付款方账号")
+        ->setCellValue("AS1", "付款方账户名")
+        ->setCellValue("AT1", "付款方行内外标志")
+        ->setCellValue("AU1", "付款方联行号")
+        ->setCellValue("AV1", "付款方联行名")
+        ->setCellValue("AW1", "收款方受理机构标识")
+        ->setCellValue("AX1", "收款方账户机构标识")
+        ->setCellValue("AY1", "收款方账号")
+        ->setCellValue("AZ1", "收款方账户名")
+        ->setCellValue("BA1", "收款方行内外标志")
+        ->setCellValue("BB1", "收款方联行号")
+        ->setCellValue("BC1", "收款方联行名")
+        ->setCellValue("BD1", "二级商户编号")
+        ->setCellValue("BE1", "二级商户类别")
+        ->setCellValue("BF1", "二级商户名称");
+    $i = 2;
+    foreach ($list as $data) {
+        $PHPSheet->setCellValue("A" . $i, " " . $data['appId'])
+            ->setCellValue("B" . $i, $data['orderNbr'])
+            ->setCellValue("C" . $i, $data['orderSubNbr'])
+            ->setCellValue("D" . $i, $data['mchOrderNbr'])
+            ->setCellValue("E" . $i, $data['mchTransNbr'])
+            ->setCellValue("F" . $i, $data['rltTransNbr'])
+            ->setCellValue("G" . $i, $data['orderType'])
+            ->setCellValue("H" . $i, $data['orderSubtype'])
+            ->setCellValue("I" . $i, $data['orderAmt'])
+            ->setCellValue("J" . $i, $data['orderCcyNbr'])
+            ->setCellValue("K" . $i, $data['status'])
+            ->setCellValue("L" . $i, $data['rtnFlag'])
+            ->setCellValue("M" . $i, $data['orderStrTime'])
+            ->setCellValue("N" . $i, $data['orderEndTime'])
+            ->setCellValue("O" . $i, $data['orderPostTime'])
+            ->setCellValue("P" . $i, $data['orderInvalidTime'])
+            ->setCellValue("Q" . $i, $data['orderInvalidFlag'])
+            ->setCellValue("R" . $i, $data['errorCode'])
+            ->setCellValue("S" . $i, $data['errorText'])
+            ->setCellValue("T" . $i, $data['chkStatus'])
+            ->setCellValue("U" . $i, $data['chkTime'])
+            ->setCellValue("V" . $i, $data['chkAmt'])
+            ->setCellValue("W" . $i, $data['clrFlag'])
+            ->setCellValue("X" . $i, $data['clrTime'])
+            ->setCellValue("Y" . $i, $data['clrAmt'])
+            ->setCellValue("Z" . $i, $data['clrErrorText'])
+            ->setCellValue("AA" . $i, $data['clrMode'])
+            ->setCellValue("AB" . $i, $data['cfmFlag'])
+            ->setCellValue("AC" . $i, $data['cfmAmt'])
+            ->setCellValue("AD" . $i, $data['bckFlag'])
+            ->setCellValue("AE" . $i, $data['bckAmt'])
+            ->setCellValue("AF" . $i, $data['rltOrderNbr'])
+            ->setCellValue("AG" . $i, $data['pltNbr'])
+            ->setCellValue("AH" . $i, $data['mchNbr'])
+            ->setCellValue("AI" . $i, $data['upayMchNbr'])
+            ->setCellValue("AJ" . $i, $data['epccMchNbr'])
+            ->setCellValue("AK" . $i, $data['uniPltNbr'])
+            ->setCellValue("AL" . $i, $data['uniMchNbr'])
+            ->setCellValue("AM" . $i, $data['mchAlias'])
+            ->setCellValue("AN" . $i, $data['pltRemark'])
+            ->setCellValue("AO" . $i, $data['orderRemark'])
+            ->setCellValue("AP" . $i, $data['payerIssrId'])
+            ->setCellValue("AQ" . $i, $data['payerAccIssrId'])
+            ->setCellValue("AR" . $i, $data['payerAccNbr'])
+            ->setCellValue("AS" . $i, $data['payerAccName'])
+            ->setCellValue("AT" . $i, $data['payerBankFlag'])
+            ->setCellValue("AU" . $i, $data['payerBankNbr'])
+            ->setCellValue("AV" . $i, $data['payerBankName'])
+            ->setCellValue("AW" . $i, $data['payeeIssrId'])
+            ->setCellValue("AX" . $i, $data['payeeAccIssrId'])
+            ->setCellValue("AY" . $i, $data['payeeAccNbr'])
+            ->setCellValue("AZ" . $i, $data['payeeAccName'])
+            ->setCellValue("BA" . $i, $data['payeeBankFlag'])
+            ->setCellValue("BB" . $i, $data['payeeBankNbr'])
+            ->setCellValue("BC" . $i, $data['payeeBankName'])
+            ->setCellValue("BD" . $i, $data['subMchNbr'])
+            ->setCellValue("BE" . $i, $data['subMchType'])
+            ->setCellValue("BF" . $i, $data['subMchName']);
+        $i++;
+    }
+    $PHPWriter = \PHPExcel_IOFactory::createWriter($PHPExcel, "Excel2007");
+    // 1. 不要直接输出到浏览器，先输出到内存
+    ob_start();
+    $PHPWriter->save("php://output");
+    $excelData = ob_get_contents();
+    ob_end_clean();
+
+    $fileName = "招行对公对账单_{$billDate}_" . time() . ".xlsx";
+    $localFilePath = public_path() . $fileName;
+
+    file_put_contents($localFilePath, $excelData);
+    try {
+        $tempFile = tempnam(sys_get_temp_dir(), 'cmb_bill');
+        file_put_contents($tempFile, $excelData);
+
+        $extension = 'xlsx';
+        $key = 'excel/' . date('Ym') . '/' . md5(uniqid(rand(), true)) . '.' . $extension;
+        $url = AliOss::upload($key, $tempFile); // 假设这个方法接受本地文件路径
+        $url = getSignedUrl($url);
+        unlink($tempFile); // 上传完删除临时文件
+        unlink($localFilePath);
+
+        return  success('下载成功', ['url' => $url]);
+    } catch (\Exception $e) {
+        return  error('下载失败');
+    }
+}
+
 
 
