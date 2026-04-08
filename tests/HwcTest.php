@@ -15,9 +15,10 @@ $req = new HwcRequest($config);
 $response = $req->submitOrderInfo([
     'total_fee' => 1,//Int 总金额，以分为单位，不允许包含任何字、符号
     'mch_create_ip' => '127.0.0.1', //String 终端IP
-    'service' => 'unified.trade.native', //String(32) 接口类型：unified.trade.native
+    'service' => 'pay.alipay.app', //String(32) 接口类型：统一扫码：unified.trade.native app微信支付：pay.weixin.raw.app app支付宝：pay.alipay.app
     'out_trade_no' => mt_rand(100000, 999999),// String(32) 商户系统内部的订单号 ,32个字符内、 可包含字母,确保在商户系统唯一
     'body' => '测试商品',// String(128) 商品描述
     'notify_url' => 'https://www.sfgd.com/notify.php',//String(256) 异步通知地址
+//    'appid'=>"wx41fb8a8b8101bada",//String 商户app对应的微信开放平台移动应用APPID app微信支付pay.weixin.raw.app必传
 ]);
 print_r($response);

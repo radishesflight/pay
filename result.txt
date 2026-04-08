@@ -126,3 +126,53 @@
 <result_code><![CDATA[0]]></result_code>
 <sign_type><![CDATA[RSA_1_256]]></sign_type>
 <status><![CDATA[0]]></status>
+================2026-04-08 15:48:20支付请求XML===================
+<xml><body><![CDATA[测试商品]]></body><mch_create_ip><![CDATA[127.0.0.1]]></mch_create_ip><mch_id><![CDATA[1030189499]]></mch_id><nonce_str><![CDATA[1849384387]]></nonce_str><notify_url><![CDATA[https://www.sfgd.com/notify.php]]></notify_url><out_trade_no><![CDATA[362273]]></out_trade_no><service><![CDATA[pay.weixin.raw.app]]></service><sign_type><![CDATA[RSA_1_256]]></sign_type><total_fee><![CDATA[1]]></total_fee><version><![CDATA[2.0]]></version><sign><![CDATA[ToS/74fLXBLFbsFzsJyY+MWh9QVBi4YKFDQLiZdwJfRRKwABTr13ouSW9Dvim4eipSiCNU7BS/t7UZR5+gVc06f35zAJaRmcbIEAarGCD8vvIIejEchCWKtgv8VVWRNJIXXZi01XxE4rAkxZuaUycNOBEbjfx0GNjQxXAxA59GoXtGoUOCsmaCcutbKExHwQOQxZ+jxNGz1ORKp18G8Cf21vTbZQtCHlrSWTLLQVaAQmeLyOagMKsjk5CbRjUjVanmcB9rVLZdCUMDG0Xl4YLL90GhjXJe1aN0RKuntq3A87f7Fw+lrRFvcoxoAOekC1LAL4li+aYZHSJEfhe+wx1Q==]]></sign></xml>
+================2026-04-08 15:48:20支付返回XML===================
+<version><![CDATA[2.0]]></version>
+<charset><![CDATA[UTF-8]]></charset>
+<sign_type><![CDATA[RSA_1_256]]></sign_type>
+<status><![CDATA[400]]></status>
+<message><![CDATA[appid:may not be empty]]></message>
+================2026-04-08 15:50:43支付请求XML===================
+<xml><appid><![CDATA[wx41fb8a8b8101bada]]></appid><body><![CDATA[测试商品]]></body><mch_create_ip><![CDATA[127.0.0.1]]></mch_create_ip><mch_id><![CDATA[1030189499]]></mch_id><nonce_str><![CDATA[302176514]]></nonce_str><notify_url><![CDATA[https://www.sfgd.com/notify.php]]></notify_url><out_trade_no><![CDATA[169264]]></out_trade_no><service><![CDATA[pay.weixin.raw.app]]></service><sign_type><![CDATA[RSA_1_256]]></sign_type><total_fee><![CDATA[1]]></total_fee><version><![CDATA[2.0]]></version><sign><![CDATA[CftM24VbMuNuO8slTlWm64KI3lDH+Ww1jpJdACePv4m0RelZfRVtuQFzFx/IfWfrelboNa6F1To3VoiRhfuYVngzPGhoo0U5HkgkhH9iDZ3sJ3qDOidYgvRfQgYBlBqV/TAU0eGDstAYXk/VUBLcPV1P/htN3YTSkKwQhvVKFzfnpDFm3thFmcdvW7Effau6KQGQLQRFP6eStW8TBW4/+4nKlsGR+ZQt0o7Dp/GjMUeIFqzvDdwgU+wm/li0Z6QQwF2+rytjVr6X09O6b6UOSacgeYXRQTuUJyzl1IhpcyQbFUeZhq9+pm+4JBTO/XVmm3GHssMDu086BwGa+Bb3DA==]]></sign></xml>
+================2026-04-08 15:50:43支付返回XML===================
+<need_query><![CDATA[N]]></need_query>
+<charset><![CDATA[UTF-8]]></charset>
+<nonce_str><![CDATA[302176514]]></nonce_str>
+<err_msg><![CDATA[该商户不支持该交易类型]]></err_msg>
+<sign><![CDATA[RuRs+55210UcVgnQ+dQzNWZyDUZMT3Oyvidx0mCg1nz/8wGNwNqyqu3Eg7EgJ95APNIogDYJWmqc7uGBjxH6ZH+xPEVAuE+iRzWf+rXEP1S0sK9SGx7pwY3WDKvelOockz7HmAi70DiWT39c7JNrwEDgDxtE9cd+IdG33AcjL3Dbt43jSWd0nK15FS0Bbzh7gg8qhtvucCQmXkwSnAnwQANNeShqfkOY2d92p9sCGK4VlhagEZHmPXAj+ERszWq58+oYnJyStJtD1J5pLxnfNiVkszO2rWPnPDwpMvaFHQc4OaqYwnofjvTj5Gl4MhdHj6Db7VMKkTO2V66b5aFbqg==]]></sign>
+<err_code><![CDATA[MERCHANT.UNSUPPORT.API]]></err_code>
+<result_code><![CDATA[1]]></result_code>
+<mch_id><![CDATA[1030189499]]></mch_id>
+<version><![CDATA[2.0]]></version>
+<sign_type><![CDATA[RSA_1_256]]></sign_type>
+<status><![CDATA[0]]></status>
+================2026-04-08 15:52:33支付请求XML===================
+<xml><appid><![CDATA[wx41fb8a8b8101bada]]></appid><body><![CDATA[测试商品]]></body><mch_create_ip><![CDATA[127.0.0.1]]></mch_create_ip><mch_id><![CDATA[1030189499]]></mch_id><nonce_str><![CDATA[1746811180]]></nonce_str><notify_url><![CDATA[https://www.sfgd.com/notify.php]]></notify_url><out_trade_no><![CDATA[630678]]></out_trade_no><service><![CDATA[pay.alipay.app]]></service><sign_type><![CDATA[RSA_1_256]]></sign_type><total_fee><![CDATA[1]]></total_fee><version><![CDATA[2.0]]></version><sign><![CDATA[dspz1Jiy5w+DyGoALckE8nfcN/Rfh9TWx9EM9vNkGtCssUopdj02hJh+4Gv4IvGLqq2ZKjAPI3ZxihfibbSyp56MjL03Vp1K7v9SXt4vPlDfulijtWp0CTE7REgnQz/X9AsJGcAibXYM/xsbkrnvhExe7mEiSy6IxBkSy3ciabf6BAB7WQM9BdzmKPhKQvs8oC09JjmU37IoRJxsFtdpQh1RxTjHVrePE8SYqs2PUPTmOEtg/wNqoOSubwubb/x9FVY58Jk2Wvhv3DHJ/NH3zhQN9F855J3q92LvVoTdd4j25fBusiJjUR5qM7nAHhLc+uVY9HK5YqKs3wKZPFXfSw==]]></sign></xml>
+================2026-04-08 15:52:34支付返回XML===================
+<need_query><![CDATA[N]]></need_query>
+<charset><![CDATA[UTF-8]]></charset>
+<nonce_str><![CDATA[1746811180]]></nonce_str>
+<err_msg><![CDATA[该商户不支持该交易类型]]></err_msg>
+<sign><![CDATA[NlL7SY0lK8nW95jvrCAYlu75ClRFQMDLMRQ47ESPfpPARJQaoClL31DBSFGXquZsJu24k3CaVZLqgY6b3c0WpcdG8L+5Y2G8/CyrxYxYeCzYmaFP4XlxAnNlRYySw6ZMxegNTYdH9qB3rBR35GOfInAVHUPzf/5Lfaii11Es4GJubcukpLFs0EQm3szhstyNpFekKF+Pcpv52xESuSNrlFJ8b64xolSVNdq1DoRyOesWxl46mLSHFzxWbwbF8Xr9yxV4+/qCTsLA8OO75pJPWrSP+8zAABGdISQiHkBd6WJKONVuvWBNSgnxijCGsItDCiZBhqwwzYQpYgDZyvs2PA==]]></sign>
+<err_code><![CDATA[MERCHANT.UNSUPPORT.API]]></err_code>
+<result_code><![CDATA[1]]></result_code>
+<mch_id><![CDATA[1030189499]]></mch_id>
+<version><![CDATA[2.0]]></version>
+<sign_type><![CDATA[RSA_1_256]]></sign_type>
+<status><![CDATA[0]]></status>
+================2026-04-08 15:52:41支付请求XML===================
+<xml><body><![CDATA[测试商品]]></body><mch_create_ip><![CDATA[127.0.0.1]]></mch_create_ip><mch_id><![CDATA[1030189499]]></mch_id><nonce_str><![CDATA[895696974]]></nonce_str><notify_url><![CDATA[https://www.sfgd.com/notify.php]]></notify_url><out_trade_no><![CDATA[759550]]></out_trade_no><service><![CDATA[pay.alipay.app]]></service><sign_type><![CDATA[RSA_1_256]]></sign_type><total_fee><![CDATA[1]]></total_fee><version><![CDATA[2.0]]></version><sign><![CDATA[Is5EBCQkwW+aQHiwXGEE5ZV/OqDCVSVbmp46dDZsekGujzWwQwiFxWoZ42xIqhbawGpryGYN55mL3DuFMwuvkHNMBaagds5tBHJFBLTqLhJ+hWlEK9XEA6o3crKUm6ILIm7232uQmACJmsOvO7PEhnCU+7mJcp91mQnLSe334uFq6n8JpRsQCdEhMQ2Cg+dvTb9nMG38/DPsl4gNQR1Qrnc5M1Xnf/qigdTLxk6L3CFepK3zGstt95xiBaoGzC3I78GIKdnD6hnLQjoxkZ74lPIRPX8VYIJGnP0llqoBnU/W6ZPpDtHuZQfeKVhIiXQPgucD1YzDHN2SgA27NinWng==]]></sign></xml>
+================2026-04-08 15:52:41支付返回XML===================
+<need_query><![CDATA[N]]></need_query>
+<charset><![CDATA[UTF-8]]></charset>
+<nonce_str><![CDATA[895696974]]></nonce_str>
+<err_msg><![CDATA[该商户不支持该交易类型]]></err_msg>
+<sign><![CDATA[quxTe0tmRbihhdyU26zXUdKlnLzmW+sbq3W0fHmSQClAZ0D4mYHnV2RqdOls3RFWGGA5yQHqo3py6TeJji3OAOJE7WQrT8C0jumcKdjxP5IbWfq3KqamNQ5qKVYx3r2UehSgb71lzIo/rduM7210juuFY/IpSLkH80539SCWo9lvSjwqnRh29PeI4QAdxLZ9IKcUqC+xYK34HXf+SZWVEcsB4ux3TjyUiCGqxJPO9S0mQv0yqs2czYC0VABrmeXU4mQzAfJUM5Q9Cu8UfoEIdZ31XjB1not3AqSIvZygTLpqv0hBN0e+vxzzv1zlNzQmMJMJ5FO0mLJHE4M53Ib7pg==]]></sign>
+<err_code><![CDATA[MERCHANT.UNSUPPORT.API]]></err_code>
+<result_code><![CDATA[1]]></result_code>
+<mch_id><![CDATA[1030189499]]></mch_id>
+<version><![CDATA[2.0]]></version>
+<sign_type><![CDATA[RSA_1_256]]></sign_type>
+<status><![CDATA[0]]></status>
