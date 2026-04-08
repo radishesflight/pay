@@ -1,0 +1,11 @@
+为更好的对接移动支付项目联调，请【客户项目负责人】抽空填写链接内容：https://docs.qq.com/form/edit/DREJjUEFzUUJLWlNN#/edit，谢谢配合！
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+请【客户开发技术人员】阅读以下网页内容：	
+
+① 客户接入对接步骤详细介绍：
+https://docs.qq.com/doc/DYWpsSXlPQVdwVFpl?（若提示登录请点击登录用QQ或微信扫码即可）
+② 接口文档地址：https://open.swiftpass.cn/openapi?code=hsty
+③ 测试账号地址：  https://doc.weixin.qq.com/sheet/e3_AHkAbwaLAMYKEvbd8I9SqOoklYWaP?scode=AB4A4QeHAA0QB2pyIuAHkAbwaLAMY&tab=BB08J2
+④ 问题排查FAQ： https://open.swiftpass.cn/openapi/wiki?index=321&chapter=35
+技术支持对接服务周期一般不超过2个月，望各方尽快推动和落实。对接过程中如有疑问请及时联系!

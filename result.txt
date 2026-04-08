@@ -1,0 +1,128 @@
+================2026-04-08 15:09:24支付请求XML===================
+<xml><mch_id><![CDATA[1030189499]]></mch_id><nonce_str><![CDATA[1534580454]]></nonce_str><service><![CDATA[unified.trade.micropay]]></service><sign_type><![CDATA[RSA_1_256]]></sign_type><version><![CDATA[2.0]]></version><sign><![CDATA[XIZx1Renr/3YfefTXqJ8PZkXFuSmCz4nuWihZZCwk7bdR83pVXpdIA/gplDU2CmQme6Ojm9UK+SpTe2TXvfi6Wib1zBQ7LLrmvQ2W6mYhz3cqrN9o8CxQ4EPGMrPtKAOhxJvlC2AVgMsv6iBZzpWx5bsekXqwVrhzGA6+1Qa7JFAf6quJOgmU/x9HtGkUDxMruAfoH3ysgYChYRjpbrC9klzRlXWNUaKVn8hm0EuKAcXCTMEifMfk2gJF+RHz97LaUET2l8J05/EVu7KXo0mIA1r9p59xDfLw6SrmnFYjAH9yRF5eLETsiFyAdlo6zHRpTZim1iCzyRK5xXuAB6tRQ==]]></sign></xml>
+================2026-04-08 15:09:24支付返回XML===================
+<version><![CDATA[2.0]]></version>
+<charset><![CDATA[UTF-8]]></charset>
+<sign_type><![CDATA[RSA_1_256]]></sign_type>
+<status><![CDATA[400]]></status>
+<message><![CDATA[mch_create_ip:may not be empty]]></message>
+================2026-04-08 15:10:04支付请求XML===================
+<xml><mch_id><![CDATA[1030189499]]></mch_id><nonce_str><![CDATA[1343739234]]></nonce_str><service><![CDATA[unified.trade.micropay]]></service><sign_type><![CDATA[RSA_1_256]]></sign_type><version><![CDATA[2.0]]></version><sign><![CDATA[AQlv4C9G7m2S5L7XoJEgQNXwsuiUB2yE0sCMyvlpiQODIbcKgj62TunNUOC3NMDtA38pj9iwfRuBbpF8J9vc30+9w9igRGRXTaZBQp4IfI3jOYyTzCKY/mRf1NRkr75mkg8TkkIK8bzbEoio/hXPmXzbliy9XpmVpKp5mhyeVKnWDvMjSsa8Pa9o+xYnik7El23ek/PBmJ7t/qSQC2FTWlJit4B57FFosoFEiNQdiOPZZ+qMBIyzj9fk0AFc+3ebcBz+RKXboXJ6XAu9uOfW6mgJNCJwCl/xaS+l762U4BzC66W9mpZngsI9rlUSHeYVTcbFmo/2PvW4zM6OaCRDUw==]]></sign></xml>
+================2026-04-08 15:10:05支付返回XML===================
+<version><![CDATA[2.0]]></version>
+<charset><![CDATA[UTF-8]]></charset>
+<sign_type><![CDATA[RSA_1_256]]></sign_type>
+<status><![CDATA[400]]></status>
+<message><![CDATA[auth_code:may not be empty]]></message>
+================2026-04-08 15:13:38支付请求XML===================
+<xml><mch_id><![CDATA[1030189499]]></mch_id><nonce_str><![CDATA[146674185]]></nonce_str><service><![CDATA[unified.trade.micropay]]></service><sign_type><![CDATA[RSA_1_256]]></sign_type><version><![CDATA[2.0]]></version><sign><![CDATA[KngSS7vowl00xpHv5kQsGoPMLyB/t4AA5qdMZfnn6zFYjoUwlRXlTfTfcFOkRXJSvnlSOWmv3A+/i9OC0ArJXLlBeNWUG7ySq1EUx8i3BsWpQQfabf9hwN7hCVNVSUbTvcsa5qSuFVfUz6uBzIBzK1OSQ01i1lH6DbAhUi0NvZ+jwovQuq5fIimEoX6CUVYEFoEWlTy7pGnsylTnwNubgH3ejkg6E1IaZrdcR1k/aKjtE8nVVFMHn9yt237TbJ9OGsG1Dm9SiKPoVgCFIyDmpVonFcYL+sL4XzYXEbShzyyR4rn8XjV8e5j+yC4CVLffLhyXmnvYmG6PfUQTYoB3xA==]]></sign></xml>
+================2026-04-08 15:13:38支付返回XML===================
+<version><![CDATA[2.0]]></version>
+<charset><![CDATA[UTF-8]]></charset>
+<sign_type><![CDATA[RSA_1_256]]></sign_type>
+<status><![CDATA[400]]></status>
+<message><![CDATA[total_fee:订单金额应大于0.01元]]></message>
+================2026-04-08 15:14:09支付请求XML===================
+<xml><mch_id><![CDATA[1030189499]]></mch_id><nonce_str><![CDATA[680340597]]></nonce_str><service><![CDATA[unified.trade.micropay]]></service><sign_type><![CDATA[RSA_1_256]]></sign_type><total_fee><![CDATA[1]]></total_fee><version><![CDATA[2.0]]></version><sign><![CDATA[F6COU6FNT8Z9+RS81czWwvPCrW1cFuTcn+8g2B8uXtCwTFZPJT/wguny7e431Icxujz4TuYqOCZFitE5iuA9LS/3GNpJSr6vBTH2IYAEPnvsIM9Dbg+miunaD94KsoRBx+sxejyD05CNfGomfT78DBUiZUQrr8jE2i93w5wP5R/iTnX45UKwrwTnqQUbDRP99F/kVE7M+iou2TkIIHNbdEpmlAtrrv8+TRTHOsWAoi4zNabUz2lWi/nGz4KyKpmVl2Xu8wYw6x9OjfuW3oV9T7tc7jolycryHF5CBT4iq52SYi5Rpfm0+lccNnZTl4N1PwjseUFaAFtp0pQZJz22zQ==]]></sign></xml>
+================2026-04-08 15:14:09支付返回XML===================
+<version><![CDATA[2.0]]></version>
+<charset><![CDATA[UTF-8]]></charset>
+<sign_type><![CDATA[RSA_1_256]]></sign_type>
+<status><![CDATA[400]]></status>
+<message><![CDATA[mch_create_ip:may not be empty]]></message>
+================2026-04-08 15:14:35支付请求XML===================
+<xml><mch_create_ip><![CDATA[127.0.0.1]]></mch_create_ip><mch_id><![CDATA[1030189499]]></mch_id><nonce_str><![CDATA[1129597879]]></nonce_str><service><![CDATA[unified.trade.micropay]]></service><sign_type><![CDATA[RSA_1_256]]></sign_type><total_fee><![CDATA[1]]></total_fee><version><![CDATA[2.0]]></version><sign><![CDATA[EL9BWKS3DchTvQ/6lI0fwbht5KiaVXqmIXiQu2o5f6Gg3V3p7/9vspxgAH5ze5AHq+TOQ8hZkAeVfv7IqKRC3vq6iqQgjQRVL5f3zEZuwJbUP+0cM7zqD5ziAGuItuFNs//DPw3xl5bjiXTNjQaUKoMNvn4vPu4/1F07zXy97dEVy22Ynurawd308ole5VRn7/ggzjz/bQP+R7gK6hQ5Fp2avV7ifIr/0i6RRobUA0G7AMVwnB+LVnV5A64FLUjxqMNYt8bhYxC6pc7uoTdjZ5kTBRqoL26lZq6sU0OgOV+ov92HrGQI5Yt5l7JKO2cUtQfw1fTVopTokuuxAScFyQ==]]></sign></xml>
+================2026-04-08 15:14:35支付返回XML===================
+<version><![CDATA[2.0]]></version>
+<charset><![CDATA[UTF-8]]></charset>
+<sign_type><![CDATA[RSA_1_256]]></sign_type>
+<status><![CDATA[400]]></status>
+<message><![CDATA[auth_code:may not be empty]]></message>
+================2026-04-08 15:14:44支付请求XML===================
+<xml><mch_create_ip><![CDATA[127.0.0.1]]></mch_create_ip><mch_id><![CDATA[1030189499]]></mch_id><nonce_str><![CDATA[1450611042]]></nonce_str><service><![CDATA[unified.trade.micropay]]></service><sign_type><![CDATA[RSA_1_256]]></sign_type><total_fee><![CDATA[1]]></total_fee><version><![CDATA[2.0]]></version><sign><![CDATA[KOhPhii0fheLhSvO8LiNc2H8otJz/SGYeel8Dsr9WOQPMB8l8gxX70ob0qRQN5qSPAML2woXq/GIhkadNU5CDKnIbNBZ0TfysOtTbBXAj1R1j/4yMmZKg6opuji8Y3NbIMPbHTnsVgwdhn+xT6Vle07TMik0aMbAjYC6jAM49P72atMs6whrHApdIb8H+ozfl2k0mDaqllYEkIpropnQsDIiXdzSeCgAleeuSwC27h51qc8CFlzKqYJ/Sajwg31+g1tW91GiJAdgjL8TrDSy0e8kseMNisw2ZDM73NbGoDr3+uNhAZR2tJXO4/a/oB59dvtOHVVCyaHvgqpwFDrXfw==]]></sign></xml>
+================2026-04-08 15:14:44支付返回XML===================
+<version><![CDATA[2.0]]></version>
+<charset><![CDATA[UTF-8]]></charset>
+<sign_type><![CDATA[RSA_1_256]]></sign_type>
+<status><![CDATA[400]]></status>
+<message><![CDATA[auth_code:may not be empty]]></message>
+================2026-04-08 15:16:50支付请求XML===================
+<xml><mch_create_ip><![CDATA[127.0.0.1]]></mch_create_ip><mch_id><![CDATA[1030189499]]></mch_id><nonce_str><![CDATA[1149929653]]></nonce_str><service><![CDATA[unified.trade.native]]></service><sign_type><![CDATA[RSA_1_256]]></sign_type><total_fee><![CDATA[1]]></total_fee><version><![CDATA[2.0]]></version><sign><![CDATA[UixvU6C+avKFytzbYjLmw/C34f6tF1g4hDcswTFVjoos+3uNrMWbL2UjFgTjkor+xR36Qwkml/aSj/4ghoUlD+i+Hb7b+9CqIVOfQBtmri87R1RTlpdWddAW4McuuuHgJmyNY9k0dCd/BH/bKzoLixGxrSK06HVZE043cuhD44LGbGwGfdvVqqhmPjEnXEFgl4+L0bi2kfMR3GdJYat0fPwllcE5FQXtFxG8a15GuOBQzsx1d3OdELfGmBGBqFl2vuH0eCmlfv94C0Rch68qGV8FYHGLvmmdeCvnrDrEdOilA2hjSRBIdbHPHaHB7Qimcl7iKW0mowzInVXp72eaOQ==]]></sign></xml>
+================2026-04-08 15:16:50支付返回XML===================
+<version><![CDATA[2.0]]></version>
+<charset><![CDATA[UTF-8]]></charset>
+<sign_type><![CDATA[RSA_1_256]]></sign_type>
+<status><![CDATA[400]]></status>
+<message><![CDATA[notify_url:may not be empty]]></message>
+================2026-04-08 15:17:17支付请求XML===================
+<xml><mch_create_ip><![CDATA[127.0.0.1]]></mch_create_ip><mch_id><![CDATA[1030189499]]></mch_id><nonce_str><![CDATA[647708249]]></nonce_str><notify_url><![CDATA[https://www.sfgd.com/notify.php]]></notify_url><service><![CDATA[unified.trade.native]]></service><sign_type><![CDATA[RSA_1_256]]></sign_type><total_fee><![CDATA[1]]></total_fee><version><![CDATA[2.0]]></version><sign><![CDATA[b+mXDfuQgXmaBLsbTLhi4F2JIZ7RpVMjPlzCKVCWdcei2hVzYxsca/kDJsbqbd7YwfazETMpiRW3g5eUER5c2hMB38as/qhUDPnrYuLKlsJwsp8LXgQiqCYMv6JDFZi+b1Vk1FYbrtALLKYBMLK8bOTFn0z1D+pb6lFaQe5fpX1vxVcHpQrotNjlaijEs0K74UD+v1cs/NdRtmz6ukx08cb24vLAKIKE95fxPOUuTIMjfPzqL+IdmZpNaCje0dGz9zNUgucVXCjD5/y0WjCR6mWcdYR4rF0lsO4Xa+CfyS+EouzCXdsQ8q0E71GEIlCEFZuxxQzjLOOOWKYyfE2eTg==]]></sign></xml>
+================2026-04-08 15:17:17支付返回XML===================
+<version><![CDATA[2.0]]></version>
+<charset><![CDATA[UTF-8]]></charset>
+<sign_type><![CDATA[RSA_1_256]]></sign_type>
+<status><![CDATA[400]]></status>
+<message><![CDATA[out_trade_no:may not be empty]]></message>
+================2026-04-08 15:17:57支付请求XML===================
+<xml><mch_create_ip><![CDATA[127.0.0.1]]></mch_create_ip><mch_id><![CDATA[1030189499]]></mch_id><nonce_str><![CDATA[1282706996]]></nonce_str><notify_url><![CDATA[https://www.sfgd.com/notify.php]]></notify_url><out_trade_no><![CDATA[256275]]></out_trade_no><service><![CDATA[unified.trade.native]]></service><sign_type><![CDATA[RSA_1_256]]></sign_type><total_fee><![CDATA[1]]></total_fee><version><![CDATA[2.0]]></version><sign><![CDATA[cMOzZPQTxpeKJQkYWMblGBuiujdjCUTZpK7az3Me3tesuzoswCsjtsAWBVFHIVMCNDFcjCKUP8v3so6r7JaQjjquruhD9Cz5r6yvR04jUqWddFaNvv1Z5IRosWPxBYdLXNgQLeEUBuXeRHEbQ9GB6gfA36E9PUe0JCeEsQYryOU1CKuIDAvHLUDIFeLn3nqI151FWBuqIApCx5LwHwx/uZnHIQzjGkGgKDxErFV32TD7bAS1ps2VsBURb1F1v0lNlpWQHPC4mRXiUuAcmeMuHVxOWA88UzLnVBEP1ZUDiThCZ+bdSRQfgIPqFnNQHbJ5y7QXlLnRBrL3SKw+O7O6UA==]]></sign></xml>
+================2026-04-08 15:17:58支付返回XML===================
+<version><![CDATA[2.0]]></version>
+<charset><![CDATA[UTF-8]]></charset>
+<sign_type><![CDATA[RSA_1_256]]></sign_type>
+<status><![CDATA[400]]></status>
+<message><![CDATA[body:may not be empty]]></message>
+================2026-04-08 15:18:21支付请求XML===================
+<xml><body><![CDATA[测试商品]]></body><mch_create_ip><![CDATA[127.0.0.1]]></mch_create_ip><mch_id><![CDATA[1030189499]]></mch_id><nonce_str><![CDATA[773621408]]></nonce_str><notify_url><![CDATA[https://www.sfgd.com/notify.php]]></notify_url><out_trade_no><![CDATA[389891]]></out_trade_no><service><![CDATA[unified.trade.native]]></service><sign_type><![CDATA[RSA_1_256]]></sign_type><total_fee><![CDATA[1]]></total_fee><version><![CDATA[2.0]]></version><sign><![CDATA[TQG62Z8EXo6n5bKbCpwUkKX6Ps9Az5A3jTkuI6ox6jSBUb+ocCZZ4X6eNrWmm2jvkTtQisAXVjyM2Px5JGWZZsgwxmxIzW1WtXgfJmbf4peAZbkZalCC9p5wzRajxdV3ZCifAvrVnF+mXknfD71Z5eHYHAMZMdf5nMT6sjLIAHg8gZ6nssYbl+zBbCJcrPMWEmz5RPdbosj7PRdIvE7RK4IZeRiZ/AlvcWMPA4j+gPWjNkaaDL6xcnqq2H/ItcGVfi/CDaXpZXRy2olSg5sPqHUIKvLfustviW9eTDhNCuGCMunTsGSYhQoGaYuNwdG74CszFr8VkrzV7dSZKrxs8w==]]></sign></xml>
+================2026-04-08 15:18:21支付返回XML===================
+<charset><![CDATA[UTF-8]]></charset>
+<nonce_str><![CDATA[773621408]]></nonce_str>
+<code_img_url><![CDATA[https://pay.hstypay.com/pay/qrcode?uuid=https://hpay.hstypay.com/app/payorder-cdcf9bd28a3c47ab8a255287495b2403]]></code_img_url>
+<sign><![CDATA[V+Pz7j/uZ7q6ZfB8yuVU7sW9DiLVBCdJNI8XjVTV5yx39BM0P0Ei3K2TDc7Hq/r3pvs+sfGPRaMKO3+nsCkTRU8V5WatlaKjapkZBPunaNilOHFRJoNcveKyGcIHsqfsRPmVQbKGZGygsdty+SFHT6jAlbjdmNnBkjsN3+T0AFp0E0ZR2EjMbD3ZjR7UgzjaYMPoiv7QHF4x1XwHLxQ2JlBdKv8EQ6UMcqiN3D9tAF/DekRncJuJ3+EQUx7A4QBAk8Fz6KQVpX7nSAbY6YttJujnkn5K+NZKsMwuYUrC9BmdQqQqi85h6VKyQxE7juNBGAR7RxrOk1vmeMJSQGQskA==]]></sign>
+<mch_id><![CDATA[1030189499]]></mch_id>
+<version><![CDATA[2.0]]></version>
+<uuid><![CDATA[cdcf9bd28a3c47ab8a255287495b2403]]></uuid>
+<code_url><![CDATA[https://hpay.hstypay.com/app/payorder-cdcf9bd28a3c47ab8a255287495b2403]]></code_url>
+<result_code><![CDATA[0]]></result_code>
+<sign_type><![CDATA[RSA_1_256]]></sign_type>
+<status><![CDATA[0]]></status>
+================2026-04-08 15:21:22支付请求XML===================
+<xml><body><![CDATA[测试商品]]></body><mch_create_ip><![CDATA[127.0.0.1]]></mch_create_ip><mch_id><![CDATA[1030189499]]></mch_id><nonce_str><![CDATA[527439076]]></nonce_str><notify_url><![CDATA[https://www.sfgd.com/notify.php]]></notify_url><out_trade_no><![CDATA[757120]]></out_trade_no><service><![CDATA[unified.trade.native]]></service><sign_type><![CDATA[RSA_1_256]]></sign_type><total_fee><![CDATA[1]]></total_fee><version><![CDATA[2.0]]></version><sign><![CDATA[efnUvm1+moJFIxHHtXeVErJOU3OYMK8siGVizebG2NtvfXPdr3LbsX606CNSUbMD2xtGMG5gckXSpxmlyHBCG4/mfajaMlClmmWcZyTnMCspsQ7jFvFsxkDgO40X6sg5QJ6NbqviVwchlirAj2uoIKwOFGG2itXetHQOM9t+s+wTmk7jliMLl75lioTgQXMoZ/+iQl9hjRrKyA2EzDZ2kXMifX95fCP5JWq8m8w3NlIsKXqefinqYXP5wHl2TgPmIGeQm54+yZoXPEQw+jIHFCdMBMt1rkxdpmvnpgwGJsyjGjqc53cpPOPE7MkDbqnnEowY/VwmhvEtK2HW8c6YfQ==]]></sign></xml>
+================2026-04-08 15:21:22支付返回XML===================
+<charset><![CDATA[UTF-8]]></charset>
+<nonce_str><![CDATA[527439076]]></nonce_str>
+<code_img_url><![CDATA[https://pay.hstypay.com/pay/qrcode?uuid=https://hpay.hstypay.com/app/payorder-bf4e705b84214320947b3bef49df7818]]></code_img_url>
+<sign><![CDATA[clKilS9GwoH42tSlezSf2uAFQsY4UUZdUarUmSlhn1ZeAclnQA56t88ojzwzMfqQQf+oguU/CDkL4hcAr3gHrMHqCE0AJCiXUScWUQ6aXw2kQEqUlKFpbDQtvVPhU1GNp2hBVmSZm7iNqQDYYcZWBwGenXM2lvT4jQG4OydZE8c5Yb9WSZpRoEtuVYGKYs8j3lFJO9eED7kjjUmfhrzr8c/QPBrstthinIX68N67xyyO2Q+eDtVogpNniSIuT2wq4EhYTV2BlE9SS6gBHmCnqN7UePs9o+CHu1EFTXvFBX+gj+j6iYsjhQYzvAFfq3QNcmL6eiC1mN+OSDlyOmKSUg==]]></sign>
+<mch_id><![CDATA[1030189499]]></mch_id>
+<version><![CDATA[2.0]]></version>
+<uuid><![CDATA[bf4e705b84214320947b3bef49df7818]]></uuid>
+<code_url><![CDATA[https://hpay.hstypay.com/app/payorder-bf4e705b84214320947b3bef49df7818]]></code_url>
+<result_code><![CDATA[0]]></result_code>
+<sign_type><![CDATA[RSA_1_256]]></sign_type>
+<status><![CDATA[0]]></status>
+================2026-04-08 15:23:58支付请求XML===================
+<xml><body><![CDATA[测试商品]]></body><mch_create_ip><![CDATA[127.0.0.1]]></mch_create_ip><mch_id><![CDATA[1030189499]]></mch_id><nonce_str><![CDATA[1362787420]]></nonce_str><notify_url><![CDATA[https://www.sfgd.com/notify.php]]></notify_url><out_trade_no><![CDATA[257313]]></out_trade_no><service><![CDATA[unified.trade.native]]></service><sign_type><![CDATA[RSA_1_256]]></sign_type><total_fee><![CDATA[1]]></total_fee><version><![CDATA[2.0]]></version><sign><![CDATA[M0qJBp7/baog+rTUf5KH/rd6OqG+WajOxio+n9Ju01VGlGcuk1oIYuPY3AaRwKp4iCPrjqHdwMJcWioXJMk3Nr622m6gBUydaR9XWYG6/aCPGchBM16sfPIeOrBAJO2Qcwu54jH6YB1l9GHxvWTDhdfDOc/Dn0/jiRoQRc2a6Qiw1Ij6Hxg9/fbajYHZzdbp5fUlfhCc15y53C2ipDalbiTbRlwWaRNWpzwqq4KnqPFQouW7CD2QGdaPxBXonYW3Kl85B9dKqsrSbePptcYzexNtnPOzJcz6Hl+LOFLiWMqsNDSmN2rZ4DBgXF82EqOYwATME9tKfjmho4tYtMsiyQ==]]></sign></xml>
+================2026-04-08 15:23:58支付返回XML===================
+<charset><![CDATA[UTF-8]]></charset>
+<nonce_str><![CDATA[1362787420]]></nonce_str>
+<code_img_url><![CDATA[https://pay.hstypay.com/pay/qrcode?uuid=https://hpay.hstypay.com/app/payorder-66e213e405c54c1996d1b5808734068e]]></code_img_url>
+<sign><![CDATA[atiwZg6mfCEFWf4QMazioZJQWHWdKqtwJAcoi95dpgjmEcnRTng6za34ka+IhHTNp+xbHSi861tbPU7zEVDgdAXoNP6eaMRZ+8Cv+Rpmr3fuleY4PsYt8+Q51NWczASY1EEAPsD53L+fSO6zxKj3VISV5u6mRih9LxntVRU+NIPfCguz78zWUfDIeQbTmP1DlyZuG5HyAX74am96uVTlYkcOZncjlV0hRySH+KoRmSVrfv0M+K4/ek22tZtRQ5ksHt6TTHrpSjJ82fQ+RL0NgUkDiGPtX3mKMM4z/Esn9GmgqxcPPLIalCFQkad4+E+gbOt32n4WnrzGS+ll86baUQ==]]></sign>
+<mch_id><![CDATA[1030189499]]></mch_id>
+<version><![CDATA[2.0]]></version>
+<uuid><![CDATA[66e213e405c54c1996d1b5808734068e]]></uuid>
+<code_url><![CDATA[https://hpay.hstypay.com/app/payorder-66e213e405c54c1996d1b5808734068e]]></code_url>
+<result_code><![CDATA[0]]></result_code>
+<sign_type><![CDATA[RSA_1_256]]></sign_type>
+<status><![CDATA[0]]></status>
+================2026-04-08 15:24:15支付请求XML===================
+<xml><body><![CDATA[测试商品]]></body><mch_create_ip><![CDATA[127.0.0.1]]></mch_create_ip><mch_id><![CDATA[1030189499]]></mch_id><nonce_str><![CDATA[1720802586]]></nonce_str><notify_url><![CDATA[https://www.sfgd.com/notify.php]]></notify_url><out_trade_no><![CDATA[368965]]></out_trade_no><service><![CDATA[unified.trade.native]]></service><sign_type><![CDATA[RSA_1_256]]></sign_type><total_fee><![CDATA[1]]></total_fee><version><![CDATA[2.0]]></version><sign><![CDATA[Wz/h1c1xBmagJie9sdxFw2feGw8UHBJhBQhiXnKUkQy5SL9hP+R0IcCCQprTwDJSpeWdf2gWWvLszvqLoitFmktZTje8RxNmMvRS5mCYQeaIoCAe6mUHCtmM5ZT0wnH+nr0EVwhsZQCPpR8DkHtx0EZta3zaLZ+OBOlfeNjFzfKGb2cK2AAsfdjluclhK+GaqUfbC/Cm+W5uK/0jod680/UPsOGPMsIRhdWvii3JNoFfVp4osn6UNHDOe3bwLFaJ57xQsMm6jVBYJmuTECVY63wd9sSV/2kHFMRlIeeMpjPFnibu0Ix3aQHVG9wzYBQje1w6fpDxnCU+rwGOROH+/Q==]]></sign></xml>
+================2026-04-08 15:24:15支付返回XML===================
+<charset><![CDATA[UTF-8]]></charset>
+<nonce_str><![CDATA[1720802586]]></nonce_str>
+<code_img_url><![CDATA[https://pay.hstypay.com/pay/qrcode?uuid=https://hpay.hstypay.com/app/payorder-eca0fc3f81f640c0a79d695863157c24]]></code_img_url>
+<sign><![CDATA[BYoUrtCHb5Zd3Yk4P6W9O+CV+cwGqjKP+nO+p9iSfInYSkHxBp3jwNVOtSsVNRuA24BPF7WmwMny0WIC5MB3637/wHUTrPNpsOK+/1h7ZGoc3kbHBsW1BVtSYG5pHSLph4GHd5cF9ot9rh3+a+e9qsfGXOOmf2BH3Q/1IR8fldHj1unSHKby1jPUWntuBdsYhaFM2px+Fu2kEL+EFWUMqurfkXjnWT0HZ38qk5plukXjp7Zh8F+n4GPlC1ZVxv8XT/7zhw1Ls5ZKBy5CHnM7v9rHf194BUkXFz3rdMvILTsi5UUPLFBhnu8bd1qhB+xaGHYJd61tkp/SJYQEIDk4mg==]]></sign>
+<mch_id><![CDATA[1030189499]]></mch_id>
+<version><![CDATA[2.0]]></version>
+<uuid><![CDATA[eca0fc3f81f640c0a79d695863157c24]]></uuid>
+<code_url><![CDATA[https://hpay.hstypay.com/app/payorder-eca0fc3f81f640c0a79d695863157c24]]></code_url>
+<result_code><![CDATA[0]]></result_code>
+<sign_type><![CDATA[RSA_1_256]]></sign_type>
+<status><![CDATA[0]]></status>
