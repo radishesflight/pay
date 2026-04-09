@@ -22,10 +22,5 @@
         "psr-4": {
             "RadishesFlight\\Pay\\": "src/"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "RadishesFlight\\Tests\\": "tests/"
-        }
     }
 }
