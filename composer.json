@@ -7,7 +7,7 @@
     ],
     "require": {
         "php": ">=7.1.0",
-        "lpilp/guomi": "^2.0",
+        "lpilp/guomi": "^1.0 || ^2.0",
         "guzzlehttp/guzzle": "^7.10",
       "ext-json": "*"
     },
