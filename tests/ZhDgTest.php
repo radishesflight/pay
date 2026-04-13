@@ -300,4 +300,36 @@ if (!$sign) {
 }
 
 
+//退款
+$requestBodyJson = [
+    "head" => [
+        "version" => "1.0",
+        "datetime" => date("Y-m-d H:i:s"),
+    ],
+    "body" => [
+        "orderInfoBckDto" => [
+            "appId" => $config['appid'],
+            "uniPltNbr" => $config['merch_id'],
+            "uniMchNbr" => $config['merch_id'],
+            "mchOrderNbr" => $params['orderId'],// 商户订单号
+            "mchTransNbr" => $params['orderId'],//交易流水号
+            "oriMchOrderNbr"=>$params['unique_id'],// 原商户订单号
+            "oriMchTransNbr"=> $params['unique_id'],// 原消费商户交易流水号
+            "orderType"=>"BCK",
+            "orderSubtype"=>"BCK",
+            "orderAmt"=>bcdiv($params['refundAmt'],100,2), // 退款金额
+            "oriOrderAmt"=>$payInfo['PAYABLE_AMOUNT'],// 原订单金额
+            "orderCcyNbr"=>"10",
+            "orderPostTime"=>date('YmdHis'),
+            "pltRemark"=>$params['order_number'].'  '.$user_sn
+        ],
+        "orderExtendAddDto"=>[
+            "transTerminalType"=>"07",
+            "transChannelType"=>"01"
+        ],
+    ],
+];
+$response = (new Cmb($config))->post($requestBodyJson, $config['host'] . $config['order_return_rul']);
+
+
 
