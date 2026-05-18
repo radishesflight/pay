@@ -1,0 +1,26 @@
+{
+    "name": "radishesflight/pay",
+    "description": "富有支付加密和验签",
+    "type": "library",
+    "keywords": [
+        "pay"
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "lpilp/guomi": "^1.0 || ^2.0",
+        "guzzlehttp/guzzle": "^7.10",
+      "ext-json": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "radishesflight",
+            "email": "530606930@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "RadishesFlight\\Pay\\": "src/"
+        }
+    }
+}
