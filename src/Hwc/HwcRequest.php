@@ -116,6 +116,21 @@ class HwcRequest
         }
     }
 
+    public function callbackQuery($xml){
+        $this->resHandler->setContent($xml);
+        $data = [
+            'service' => 'unified.trade.query',
+            'out_trade_no'=> $this->resHandler->getParameter('out_trade_no'),
+        ];
+        $response= $this ->execute($data);
+        if(!empty($response) && $response['status'] == 0 && $response['result_code'] == 0){
+            if ($response['trade_state'] == 'SUCCESS'){
+                return $response;
+            }
+        }
+        return ['status' => 500, 'msg' => $response];
+    }
+
     public function callback($xml){
         $this->resHandler->setContent($xml);
 //        $this->resHandler->setKey($this->cfg->C('key'));
