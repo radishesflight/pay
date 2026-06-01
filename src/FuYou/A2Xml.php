@@ -7,7 +7,6 @@ class A2Xml
 {
     private $xml = null;
     public $data=[];
-    public $pemPath='';
 
    public function __construct()
     {
