@@ -6,10 +6,44 @@ use XMLWriter;
 class A2Xml
 {
     private $xml = null;
+    public $data=[];
+    public $pemPath='';
 
    public function __construct()
     {
         $this->xml = new XmlWriter();
+    }
+
+    public function execute($url,$data,$pemPath)
+    {
+//拼装过的需要签名的字符串串
+//字典排序$data
+        ksort($data);
+        $sign= '';
+        foreach ($data as $key=>$value){
+            $sign .= $key . '=' . $value . "&";
+
+        }
+        $sign = substr($sign,0,-1);
+//RSAwithMD5+base64加密后得到的sign
+        $data['sign']=$this->sign($sign,$pemPath);
+//完整的xml格式
+        $a = "<?xml version=\"1.0\" encoding=\"GBK\" standalone=\"yes\"?><xml>".$this->toXml($data)."</xml>";
+
+//经过两次urlencode()之后的字符串
+        $b = "req=".urlencode(urlencode($a));
+
+//通过curl的post方式发送接口请求
+
+//返回的xml字符串
+
+        $resultXml = URLdecode($this->SendDataByCurl($url,$b));
+
+//将xml转化成对象
+        $ob= simplexml_load_string($resultXml);
+
+        $ob = json_encode($ob);
+      return json_decode($ob,true);
     }
 
     //数组转xml
