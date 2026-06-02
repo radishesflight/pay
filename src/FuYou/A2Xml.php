@@ -1,48 +1,64 @@
 <?php
 
 namespace RadishesFlight\Pay\FuYou;
+
+use Exception;
 use XMLWriter;
 
 class A2Xml
 {
     private $xml = null;
-    public $data=[];
+    public $data = [];
 
-   public function __construct()
+    public function __construct()
     {
         $this->xml = new XmlWriter();
     }
 
-    public function execute($url,$data,$pemPath)
+    public function xmlToArray($encodedXml)
+    {
+        $rawXml = urldecode(urldecode($encodedXml));
+        // 2. GBK 转 UTF-8（防止乱码）
+        $xmlContent = iconv('GBK', 'UTF-8//IGNORE', $rawXml);
+        $xml = simplexml_load_string($xmlContent, 'SimpleXMLElement', LIBXML_NONET | LIBXML_NOENT);
+        //xml转数组
+        $requestData = json_decode(json_encode($xml), true);
+        if (!$requestData) {
+            throw new Exception('转换失败');
+        }
+        return $requestData;
+    }
+
+    public function execute($url, $data, $pemPath)
     {
 //拼装过的需要签名的字符串串
 //字典排序$data
         ksort($data);
-        $sign= '';
-        foreach ($data as $key=>$value){
+        $sign = '';
+        foreach ($data as $key => $value) {
             $sign .= $key . '=' . $value . "&";
 
         }
-        $sign = substr($sign,0,-1);
+        $sign = substr($sign, 0, -1);
 //RSAwithMD5+base64加密后得到的sign
-        $data['sign']=$this->sign($sign,$pemPath);
+        $data['sign'] = $this->sign($sign, $pemPath);
 //完整的xml格式
-        $a = "<?xml version=\"1.0\" encoding=\"GBK\" standalone=\"yes\"?><xml>".$this->toXml($data)."</xml>";
+        $a = "<?xml version=\"1.0\" encoding=\"GBK\" standalone=\"yes\"?><xml>" . $this->toXml($data) . "</xml>";
 
 //经过两次urlencode()之后的字符串
-        $b = "req=".urlencode(urlencode($a));
+        $b = "req=" . urlencode(urlencode($a));
 
 //通过curl的post方式发送接口请求
 
 //返回的xml字符串
 
-        $resultXml = URLdecode($this->SendDataByCurl($url,$b));
+        $resultXml = URLdecode($this->SendDataByCurl($url, $b));
 
 //将xml转化成对象
-        $ob= simplexml_load_string($resultXml);
+        $ob = simplexml_load_string($resultXml);
 
         $ob = json_encode($ob);
-      return json_decode($ob,true);
+        return json_decode($ob, true);
     }
 
     //数组转xml
@@ -67,7 +83,7 @@ class A2Xml
     }
 
     //签名加密流程
-public function sign($data,$pemPath)
+    public function sign($data, $pemPath)
     {
         //读取密钥文件
         $pem = file_get_contents($pemPath);
@@ -85,7 +101,7 @@ public function sign($data,$pemPath)
     }
 
     //通过curl模拟post的请求；
-    public  function SendDataByCurl($url, $data)
+    public function SendDataByCurl($url, $data)
     {
         //对空格进行转义
         $url = str_replace(' ', '+', $url);
