@@ -6,3 +6,6 @@ http://47.96.154.194/doc/#/scanpay/api?id=_33-%e5%be%ae%e4%bf%a1%e5%85%ac%e4%bc%
 
 
 https://doc.weixin.qq.com/doc/w3_AHwAzQYZAE8CNs90dykOkQ2SqC44r?scode=AMoAIAeJAA0SgmLcjsAaMAJwaIAOk
+
+对账单：
+https://fundwx.fuiou.com/doc/#/duizhang/
