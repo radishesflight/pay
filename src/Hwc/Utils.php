@@ -20,7 +20,7 @@ class Utils
     public static function dataRecodes($title, $data)
     {
         $handler = fopen('result.txt', 'a+');
-        $content = "================" . $title . "===================\n";
+        $content = "";
         if (is_string($data) === true) {
             $content .= $data . "\n";
         }
@@ -30,6 +30,7 @@ class Utils
                 $content .= '<' . $k . '><![CDATA[' . $v . ']]></' . $k . '>' . "\n";
             }
         }
+        $content = mb_substr($content, 1);
         $flag = fwrite($handler, $content);
         fclose($handler);
         return $flag;

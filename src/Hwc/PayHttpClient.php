@@ -66,8 +66,6 @@ class PayHttpClient
     {
         $this->timeOut = $timeOut;
     }
-
-    //执行http调用
     public function call()
     {
         //启动一个CURL会话
@@ -96,6 +94,42 @@ class PayHttpClient
             return false;
         } else if ($this->responseCode != "200") {
             $this->errInfo = "call http err httpcode=" . $this->responseCode;
+            curl_close($ch);
+            return false;
+        }
+
+        curl_close($ch);
+        $this->resContent = $res;
+
+
+        return true;
+    }
+
+    //执行http调用
+    public function callDown()
+    {
+        //启动一个CURL会话
+        $ch = curl_init();
+
+        // 设置curl允许执行的最长秒数
+        curl_setopt($ch, CURLOPT_TIMEOUT, $this->timeOut);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        // 获取的信息以文件流的形式返回，而不是直接输出。
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        //发送一个常规的POST请求。
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_URL, $this->url);
+        //要传送的所有数据
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $this->data);
+
+        // 执行操作
+        $res = curl_exec($ch);
+        $this->responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        if ($res == NULL) {
+            $this->errInfo = "call http err :" . curl_errno($ch) . " - " . curl_error($ch);
             curl_close($ch);
             return false;
         }

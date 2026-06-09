@@ -151,6 +151,29 @@ class HwcRequest
         }
     }
 
+    public function downBill($params)
+    {
+        $this->reqHandler->setReqParams($params, ['method']);
+        $this->reqHandler->setParameter('mch_id', $this->cfg['mchId']);//必填项，商户号，由平台分配
+
+        $this->reqHandler->setParameter('version', $this->cfg['version']);
+        $this->reqHandler->setParameter('op_user_id', $this->cfg['mchId']);
+        $this->reqHandler->setParameter('sign_type', $this->cfg['sign_type']);
+        $this->reqHandler->setParameter('nonce_str', mt_rand());//随机字符串，必填项，不长于 32 位
+        $this->reqHandler->createSign();//创建签名
+        $data = Utils::toXml($this->reqHandler->getAllParameters());
+
+        $this->pay->setReqContent($this->reqHandler->getGateURL(),$data);
+        if($this->pay->callDown()){
+            $content = $this->pay->getResContent();
+//            echo $content;
+            $flag=Utils::dataRecodes( "对账单数据", $content);
+            var_dump($flag);exit();
+        }else{
+            echo json_encode(array('status'=>500,'msg'=>'Response Code:'.$this->pay->getResponseCode().' Error Info:'.$this->pay->getErrInfo()));
+        }
+    }
+
 
     public function execute($params)
     {
