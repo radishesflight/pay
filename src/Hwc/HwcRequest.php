@@ -165,10 +165,10 @@ class HwcRequest
 
         $this->pay->setReqContent($this->reqHandler->getGateURL(),$data);
         if($this->pay->callDown()){
-            $content = $this->pay->getResContent();
+            return $this->pay->getResContent();
 //            echo $content;
-            $flag=Utils::dataRecodes( "对账单数据", $content);
-            var_dump($flag);exit();
+//            $flag=Utils::dataRecodes( "对账单数据", $content);
+//            var_dump($flag);exit();
         }else{
             echo json_encode(array('status'=>500,'msg'=>'Response Code:'.$this->pay->getResponseCode().' Error Info:'.$this->pay->getErrInfo()));
         }
